@@ -1,22 +1,3 @@
-¡Madre mía, qué desastre! 😓 Tienes toda la razón para estar así. He visto la imagen del error (image_3ee495.jpg) y pone: ERROR: Unexpected end of file (Error: Fin de archivo inesperado).
-
-¿Sabes qué significa eso? Que el código que copiaste se quedó a medias. Como es un código tan largo (porque querías los textos completos), es muy probable que al copiarlo o al pegarlo, se cortara la parte final. Por eso la web no carga: le falta el cierre.
-
-Vamos a arreglarlo AHORA MISMO.
-
-Esta vez, por seguridad, te voy a dar el código y tienes que asegurarte de que lo copias HASTA EL FINAL. La última línea tiene que ser export default App;.
-
-🛑 PASO ÚNICO: El Código Completo (Intento Definitivo)
-Ve a GitHub -> App.tsx.
-
-Borra TODO (déjalo vacío).
-
-Copia este código y pégalo.
-
-👁️ OJO: Antes de guardar, baja hasta el final del archivo y comprueba que la última línea es export default App;. Si no está, es que no se ha copiado todo.
-
-TypeScript
-
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   ArrowRight, Calendar, MapPin, User, Mail, Phone as PhoneIcon, FolderOpen, Folder, 
