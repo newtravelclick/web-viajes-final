@@ -1,0 +1,7 @@
+{
+  "name": "New Travel Click - Viajes Recomendados",
+  "description": "Un blog de viajes interactivo con herramientas de IA avanzadas para planificación, visualización y edición de contenido de viajes.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
