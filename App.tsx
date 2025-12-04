@@ -3,10 +3,11 @@ import {
   ArrowRight, Calendar, MapPin, User, Mail, Phone as PhoneIcon, FolderOpen, Folder, 
   ArrowLeft, Sparkles, X, Send, Loader2, Globe, Utensils, Lightbulb, Clock, ShieldCheck, Heart, Headphones, Menu
 } from 'lucide-react';
+// Importamos el servicio de IA (asegúrate de que el archivo geminiService.ts esté en tu lista de archivos)
 import { askTravelAssistant } from './geminiService';
 import ReactMarkdown from 'react-markdown';
 
-// --- ESTE ES TU CONTENIDO ORIGINAL EXACTO (RECUPERADO DE TU ARCHIVO) ---
+// --- 1. CONTENIDO COMPLETO Y DETALLADO (ORIGINAL RECUPERADO) ---
 const BLOG_CONTENT: Record<string, string> = {
   '1': `
     <h1>1. RUTA POR LA COSTA BRAVA: CALAS SECRETAS Y PUEBLOS DE PESCADORES</h1>
@@ -44,12 +45,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
       <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
       <p style="margin-top: 10px; color: #333;">En verano, los parkings de las calas famosas se llenan a las 09:00 AM. Si quieres aparcar y tener sitio para la toalla, madruga. Si vas fuera de temporada (junio o septiembre), tendrás el paraíso para ti solo.</p>
-    </div>
-
-    <div style="text-align: center; margin: 50px 0 30px 0;">
-      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
-        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-      </a>
     </div>
   `,
   '2': `
@@ -96,13 +91,6 @@ const BLOG_CONTENT: Record<string, string> = {
         <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
         <p style="margin: 10px 0 0 0;">Ojo con la moneda. Ninguna de las dos ciudades usa Euro (usan Coronas Checas y Florines Húngaros). Evita cambiar dinero en el aeropuerto; saca directamente de cajeros oficiales en la ciudad para mejor cambio.</p>
       </div>
-
-      <div style="text-align: center; margin: 50px 0 30px 0;">
-        <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
-          ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-        </a>
-      </div>
-
     </div>
   `,
   '3': `
@@ -149,13 +137,6 @@ const BLOG_CONTENT: Record<string, string> = {
         <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
         <p style="margin: 10px 0 0 0;">En Japón no se deja propina (se considera ofensivo) y no se habla por teléfono en los trenes. La etiqueta y el respeto al prójimo son sagrados. ¡Lleva calcetines limpios y sin agujeros, te descalzarás mucho!</p>
       </div>
-
-      <div style="text-align: center; margin: 50px 0 30px 0;">
-        <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
-          ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-        </a>
-      </div>
-
     </div>
   `,
   '4': `
@@ -194,12 +175,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
       <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
       <p style="margin-top: 10px; color: #333;">Andalucía en julio y agosto puede superar los 40°C. Organiza tus visitas a monumentos a primera hora de la mañana (09:00h) y deja las tardes para museos con aire acondicionado o paseos nocturnos. ¡La siesta aquí es una necesidad, no un capricho!</p>
-    </div>
-
-    <div style="text-align: center; margin: 50px 0 30px 0;">
-      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
-        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-      </a>
     </div>
   `,
   '5': `
@@ -246,13 +221,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
     <p style="margin: 10px 0 0 0;">El clima noruego es impredecible incluso en verano. Viste siempre por capas ("teoría de la cebolla") y lleva un chubasquero de calidad. ¡No dejes que la lluvia te pare!</p>
   </div>
-
-  <div style="text-align: center; margin: 50px 0 30px 0;">
-    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
-      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-    </a>
-  </div>
-
 </div>
   `,
   '6': `
@@ -299,13 +267,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
     <p style="margin: 10px 0 0 0;">Viste con colores neutros (caqui, verde oliva, beige). Evita el azul oscuro y el negro, ya que atraen a la mosca tsetsé. Y no olvides unos buenos prismáticos; la diferencia entre ver una mancha y ver un leopardo está en la óptica.</p>
   </div>
-
-  <div style="text-align: center; margin: 50px 0 30px 0;">
-    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
-      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-    </a>
-  </div>
-
 </div>
   `,
   '7': `
@@ -344,12 +305,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
       <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
       <p style="margin-top: 10px; color: #333;">En el norte el clima cambia en minutos ("Orbayu" o "Sirimiri"). Lleva siempre un chubasquero ligero y calzado cómodo que no resbale. Y recuerda: las raciones de comida en el norte son muy generosas. ¡Cuidado al pedir!</p>
-    </div>
-
-    <div style="text-align: center; margin: 50px 0 30px 0;">
-      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
-        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-      </a>
     </div>
   `,
   '8': `
@@ -396,13 +351,6 @@ const BLOG_CONTENT: Record<string, string> = {
     <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
     <p style="margin: 10px 0 0 0;">Si alquilas coche, ¡cuidado con las ZTL (Zonas de Tráfico Limitado)! Están en el centro de casi todos los pueblos y ciudades. Si entras sin permiso, la multa te llegará a casa meses después.</p>
   </div>
-
-  <div style="text-align: center; margin: 50px 0 30px 0;">
-    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
-      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
-    </a>
-  </div>
-
 </div>
   `,
   '9': `
@@ -478,7 +426,7 @@ const blogData = {
   ]
 };
 
-// --- COMPONENTE LAYOUT (CON LA BARRA DE NAVEGACIÓN FUNCIONAL) ---
+// --- COMPONENTE LAYOUT (CON NAVEGACIÓN Y MENÚ) ---
 const Layout = ({ children, onNavigate }: { children: React.ReactNode, onNavigate: (section: string) => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -515,6 +463,9 @@ const Layout = ({ children, onNavigate }: { children: React.ReactNode, onNavigat
         <div className="container mx-auto px-4 text-center">
            <h3 className="text-3xl font-black mb-6">NEW TRAVEL CLICK</h3>
            <p className="text-gray-400 max-w-md mx-auto mb-8">Viajes diseñados a medida con la seguridad y experiencia que mereces.</p>
+           <div className="flex justify-center gap-4 mb-4">
+             {/* Iconos de redes sociales simulados o reales si tienes los enlaces */}
+           </div>
            <p className="text-gray-600 text-sm">© 2024 New Travel Click. Todos los derechos reservados.</p>
         </div>
       </footer>
@@ -525,15 +476,14 @@ const Layout = ({ children, onNavigate }: { children: React.ReactNode, onNavigat
 function App() {
   const [currentSection, setCurrentSection] = useState('home');
   const [activePost, setActivePost] = useState<string | null>(null);
+  
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const [aiQuery, setAiQuery] = useState('');
   const [aiResponse, setAiResponse] = useState<{ text: string; sources: any[] } | null>(null);
   const [aiStatus, setAiStatus] = useState('IDLE');
 
-  // --- ARREGLO DE LOS BOTONES DE NAVEGACIÓN ---
   const scrollToSection = (id: string) => {
-    setActivePost(null); // 1. Cierra el artículo si está abierto
-    // 2. Espera un poquito a que se cargue la portada y luego baja
+    setActivePost(null); 
     setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -550,27 +500,49 @@ function App() {
     }
   };
 
+  const handleClosePost = () => {
+    setActivePost(null);
+  };
+
+  // --- FUNCIÓN MAILTO MEJORADA ---
   const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
-    const phone = formData.get('phone') as string;
 
-    const body = `Hola, quiero solicitar información.\n\nMis datos son:\n- Nombre: ${name}\n- Teléfono: ${phone}\n- Email: ${email}\n\nMensaje:\n${message}`;
-    // Usamos mailto para abrir el gestor de correo del usuario
-    window.location.href = `mailto:newtravelclick@newtravelclick.com?subject=Nueva Solicitud Web de ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+    // Aviso al usuario porque mailto depende de su configuración local
+    const confirmSend = window.confirm("Se abrirá tu aplicación de correo predeterminada para enviar este mensaje. ¿Continuar?");
+    
+    if (confirmSend) {
+        const body = `Hola, quiero solicitar información.\n\nMis datos son:\n- Nombre: ${name}\n- Teléfono: ${phone}\n- Email: ${email}\n\nMensaje:\n${message}`;
+        window.location.href = `mailto:newtravelclick@newtravelclick.com?subject=Nueva Solicitud Web de ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+    }
   };
-
+  
   const handleWhatsAppContact = () => {
-    const text = "Hola New Travel Click, me gustaría información sobre un viaje.";
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    let name = "Cliente";
+    let message = "Hola, me gustaría más información.";
+    
+    if(form) {
+      const formData = new FormData(form);
+      const nameInput = formData.get('name') as string;
+      const msgInput = formData.get('message') as string;
+      if (nameInput) name = nameInput;
+      if (msgInput) message = msgInput;
+    }
+    
+    const text = `Hola soy ${name}, escribo desde la web.\n${message}`;
     window.open(`https://wa.me/34633543009?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const handleAskAI = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!aiQuery.trim()) return;
+
     setAiStatus('LOADING');
     try {
       const result = await askTravelAssistant(aiQuery);
@@ -581,13 +553,16 @@ function App() {
     }
   };
 
-  // --- VISTA DEL ARTÍCULO ---
+  // VISTA ARTÍCULO
   if (activePost && BLOG_CONTENT[activePost]) {
     return (
       <Layout onNavigate={scrollToSection}>
         <div className="pt-28 pb-20 bg-[#FFF8F0] min-h-screen">
           <div className="container mx-auto px-4 max-w-4xl">
-            <button onClick={() => setActivePost(null)} className="mb-8 flex items-center text-[#0071BC] font-bold hover:underline transition-all">
+            <button 
+              onClick={handleClosePost}
+              className="mb-8 flex items-center text-[#0071BC] font-bold hover:underline transition-all"
+            >
               <ArrowLeft className="mr-2" /> Volver a la Lista
             </button>
             <article className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 prose prose-lg max-w-none">
@@ -599,105 +574,221 @@ function App() {
     );
   }
 
-  // --- VISTA PRINCIPAL (PORTADA) ---
+  // VISTA PRINCIPAL
   return (
     <Layout onNavigate={scrollToSection}>
-      {/* Hero */}
       <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070" className="w-full h-full object-cover"/>
+          <img 
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop" 
+            alt="Sunny Tropical Beach Vacation in Maldives" 
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent"></div>
         </div>
+
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black text-[#15803d] mb-6 tracking-wide leading-none shadow-sm drop-shadow-md">DESCUBRE EL MUNDO CON <br/> NEW TRAVEL CLICK</h1>
-          <p className="text-xl md:text-2xl text-gray-700 font-bold mb-10 max-w-3xl mx-auto drop-shadow-sm">Viajes diseñados para ti con la seguridad y experiencia que mereces.</p>
+          <h1 className="text-6xl md:text-8xl font-black text-[#15803d] mb-6 tracking-wide leading-none shadow-sm drop-shadow-md">
+            DESCUBRE EL MUNDO CON <br/> NEW TRAVEL CLICK
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 font-bold mb-10 max-w-3xl mx-auto drop-shadow-sm font-sans">
+            Viajes diseñados para ti con la seguridad y experiencia que mereces. Déjate inspirar y nosotros nos ocupamos del resto.
+          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-             <a href="https://www.newtravelclick.com/" target="_blank" className="bg-[#0B3D91] text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:bg-[#333333] transition-all">VER OFERTAS EXCLUSIVAS</a>
-             <button onClick={() => setIsAIModalOpen(true)} className="bg-white/40 backdrop-blur-md border border-white/60 text-[#333333] font-bold py-4 px-10 rounded-full shadow-lg hover:bg-white/60 transition-all flex items-center justify-center"><Sparkles className="mr-2" /> Planificar con IA</button>
+             <a 
+                href="https://www.newtravelclick.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#0B3D91] text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:bg-[#333333] transition-all transform hover:-translate-y-1 uppercase tracking-wider"
+             >
+               VER OFERTAS EXCLUSIVAS
+             </a>
+             <button
+               onClick={() => setIsAIModalOpen(true)}
+               className="bg-white/40 backdrop-blur-md border border-white/60 text-[#333333] font-bold py-4 px-10 rounded-full shadow-lg hover:bg-white/60 transition-all transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center"
+             >
+               <Sparkles className="mr-2" /> Planificar con IA
+             </button>
           </div>
         </div>
       </section>
 
-      {/* Grid de Rutas */}
       <section id="rutas-espana" className="py-24 bg-[#FFF8F0]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16"><h2 className="text-5xl font-black text-[#333333] mb-4">Nuestras Colecciones</h2></div>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-[#333333] mb-4">
+              Nuestras Colecciones
+            </h2>
+            <div className="h-1 w-24 bg-[#0071BC] mx-auto rounded-full"></div>
+            <p className="mt-4 text-black font-bold text-lg">Explora nuestras recomendaciones</p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            
             {/* España */}
-            <div className="bg-white border-t-8 border-[#0071BC] rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-[1.01] transition-all group">
-              <h3 className="text-3xl font-black text-[#333333] mb-6 flex items-center justify-between">Rutas España <Folder className="text-[#0071BC] opacity-20 group-hover:opacity-100 transition-opacity"/></h3>
-              <div className="space-y-4">
-                {blogData.espana.map((item) => (
-                  <button key={item.id} onClick={() => handleOpenPost(item.id)} className="w-full flex items-center p-4 rounded-lg hover:bg-blue-50 transition-all text-left border-b border-gray-100">
-                     <div className="bg-blue-100 p-2 rounded-full mr-3 text-[#0071BC]"><MapPin size={20} /></div>
-                     <span className="text-gray-800 font-extrabold text-xl">{item.title}</span>
-                  </button>
-                ))}
+            <div className="group relative pt-10 h-full">
+              <div className="absolute top-2 left-0 w-36 h-12 bg-[#0071BC] rounded-t-xl z-0 transform group-hover:-translate-y-2 transition-transform duration-300">
+                 <span className="absolute bottom-3 left-5 text-sm font-bold text-white uppercase tracking-wider">Nacional</span>
+              </div>
+              <div className="relative z-10 bg-white border-t-8 border-[#0071BC] rounded-tr-2xl rounded-b-2xl shadow-xl p-8 h-full transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                 <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                    <h3 className="text-3xl font-black text-[#333333] tracking-wide">Rutas por España</h3>
+                    <Folder className="text-[#0071BC] opacity-20" size={48} />
+                 </div>
+                 <div className="space-y-4">
+                    {blogData.espana.map((item) => (
+                      <button 
+                        key={item.id} 
+                        onClick={() => handleOpenPost(item.id)}
+                        className="w-full flex items-center group/item cursor-pointer p-4 rounded-lg hover:bg-blue-50 transition-all text-left border-b border-gray-100 last:border-0"
+                      >
+                         <div className="bg-blue-100 p-2 rounded-full mr-3 group-hover/item:bg-[#0071BC] group-hover/item:text-white transition-colors text-[#0071BC] flex-shrink-0">
+                            <MapPin size={20} />
+                         </div>
+                         <span className="text-gray-800 font-extrabold group-hover/item:text-[#0071BC] transition-all text-xl tracking-tight group-hover/item:translate-x-2">
+                           {item.title}
+                         </span>
+                      </button>
+                    ))}
+                 </div>
               </div>
             </div>
+
             {/* Europa */}
-            <div id="rutas-europa" className="bg-white border-t-8 border-[#29ABE2] rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-[1.01] transition-all group">
-              <h3 className="text-3xl font-black text-[#333333] mb-6 flex items-center justify-between">Rutas Europa <Folder className="text-[#29ABE2] opacity-20 group-hover:opacity-100 transition-opacity"/></h3>
-              <div className="space-y-4">
-                {blogData.europa.map((item) => (
-                  <button key={item.id} onClick={() => handleOpenPost(item.id)} className="w-full flex items-center p-4 rounded-lg hover:bg-cyan-50 transition-all text-left border-b border-gray-100">
-                     <div className="bg-cyan-100 p-2 rounded-full mr-3 text-[#29ABE2]"><MapPin size={20} /></div>
-                     <span className="text-gray-800 font-extrabold text-xl">{item.title}</span>
-                  </button>
-                ))}
+            <div id="rutas-europa" className="group relative pt-10 h-full">
+              <div className="absolute top-2 left-0 w-36 h-12 bg-[#29ABE2] rounded-t-xl z-0 transform group-hover:-translate-y-2 transition-transform duration-300">
+                 <span className="absolute bottom-3 left-5 text-sm font-bold text-white uppercase tracking-wider">Continental</span>
+              </div>
+              <div className="relative z-10 bg-white border-t-8 border-[#29ABE2] rounded-tr-2xl rounded-b-2xl shadow-xl p-8 h-full transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                 <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                    <h3 className="text-3xl font-black text-[#333333] tracking-wide">Rutas por Europa</h3>
+                    <Folder className="text-[#29ABE2] opacity-20" size={48} />
+                 </div>
+                  <div className="space-y-4">
+                    {blogData.europa.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleOpenPost(item.id)}
+                        className="w-full flex items-center group/item cursor-pointer p-4 rounded-lg hover:bg-cyan-50 transition-all text-left border-b border-gray-100 last:border-0"
+                      >
+                         <div className="bg-cyan-100 p-2 rounded-full mr-3 group-hover/item:bg-[#29ABE2] group-hover/item:text-white transition-colors text-[#29ABE2] flex-shrink-0">
+                            <MapPin size={20} />
+                         </div>
+                         <span className="text-gray-800 font-extrabold group-hover/item:text-[#29ABE2] transition-all text-xl tracking-tight group-hover/item:translate-x-2">
+                           {item.title}
+                         </span>
+                      </button>
+                    ))}
+                 </div>
               </div>
             </div>
-            {/* Mundo */}
-            <div id="larga-distancia" className="bg-white border-t-8 border-[#0B3D91] rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-[1.01] transition-all group">
-              <h3 className="text-3xl font-black text-[#333333] mb-6 flex items-center justify-between">Larga Distancia <Folder className="text-[#0B3D91] opacity-20 group-hover:opacity-100 transition-opacity"/></h3>
-              <div className="space-y-4">
-                {blogData.larga.map((item) => (
-                  <button key={item.id} onClick={() => handleOpenPost(item.id)} className="w-full flex items-center p-4 rounded-lg hover:bg-orange-50 transition-all text-left border-b border-gray-100">
-                     <div className="bg-orange-100 p-2 rounded-full mr-3 text-[#0B3D91]"><MapPin size={20} /></div>
-                     <span className="text-gray-800 font-extrabold text-xl">{item.title}</span>
-                  </button>
-                ))}
+
+            {/* Larga Distancia */}
+            <div id="larga-distancia" className="group relative pt-10 h-full">
+              <div className="absolute top-2 left-0 w-36 h-12 bg-[#0B3D91] rounded-t-xl z-0 transform group-hover:-translate-y-2 transition-transform duration-300">
+                 <span className="absolute bottom-3 left-5 text-sm font-bold text-white uppercase tracking-wider">Mundo</span>
+              </div>
+              <div className="relative z-10 bg-white border-t-8 border-[#0B3D91] rounded-tr-2xl rounded-b-2xl shadow-xl p-8 h-full transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                 <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                    <h3 className="text-3xl font-black text-[#333333] tracking-wide">Larga Distancia</h3>
+                    <Folder className="text-[#0B3D91] opacity-20" size={48} />
+                 </div>
+                  <div className="space-y-4">
+                    {blogData.larga.map((item) => (
+                      <button 
+                        key={item.id}
+                        onClick={() => handleOpenPost(item.id)}
+                        className="w-full flex items-center group/item cursor-pointer p-4 rounded-lg hover:bg-orange-50 transition-all text-left border-b border-gray-100 last:border-0"
+                      >
+                         <div className="bg-orange-100 p-2 rounded-full mr-3 group-hover/item:bg-[#0B3D91] group-hover/item:text-white transition-colors text-[#0B3D91] flex-shrink-0">
+                            <MapPin size={20} />
+                         </div>
+                         <span className="text-gray-800 font-extrabold group-hover/item:text-[#0B3D91] transition-all text-xl tracking-tight group-hover/item:translate-x-2">
+                           {item.title}
+                         </span>
+                      </button>
+                    ))}
+                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Contacto con Email REAL (mailto) y WhatsApp */}
-      <section id="contact" className="py-20 bg-gray-900 text-white relative">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-[#333333] text-white relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row gap-12 items-center">
+            
             <div className="md:w-1/2">
-              <h2 className="text-5xl font-black mb-6">¿Hablamos?</h2>
-              <p className="text-gray-400 text-lg mb-8">Déjanos tus datos y diseñaremos tu viaje ideal.</p>
+              <span className="text-[#29ABE2] font-bold tracking-widest uppercase text-sm mb-2 block">¿Dudas?</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
+                Te ayudamos a diseñar <br/>el viaje perfecto
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                Déjanos tus datos y uno de nuestros expertos se pondrá en contacto contigo.
+              </p>
               
               <div className="space-y-6">
-                <div className="flex items-center p-4 bg-white/5 rounded-lg border border-white/10">
+                <div className="flex items-center p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
                   <PhoneIcon className="text-[#29ABE2] mr-4" size={24} />
-                  <div><p className="text-xs text-gray-500 uppercase font-bold">Llámanos</p><p className="font-bold text-xl">910 825 715</p></div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase font-bold">Llámanos</p>
+                    <p className="font-bold text-xl">910 825 715</p>
+                  </div>
                 </div>
-                <div className="flex items-center p-4 bg-white/5 rounded-lg border border-white/10">
+                <div className="flex items-center p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
                   <Mail className="text-[#29ABE2] mr-4" size={24} />
-                  <div><p className="text-xs text-gray-500 uppercase font-bold">Escríbenos</p><p className="font-bold text-lg break-all">newtravelclick@newtravelclick.com</p></div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase font-bold">Escríbenos</p>
+                    <p className="font-bold text-lg text-xs md:text-lg break-all">newtravelclick@newtravelclick.com</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="md:w-1/2 w-full">
               <form id="contact-form" onSubmit={handleContactSubmit} className="bg-white text-gray-800 p-8 rounded-2xl shadow-2xl">
-                <div className="mb-6"><label className="block font-bold text-sm uppercase mb-2">Nombre</label><input name="name" className="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Tu nombre" required /></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div><label className="block font-bold text-sm uppercase mb-2">Teléfono</label><input name="phone" className="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="+34..." required /></div>
-                  <div><label className="block font-bold text-sm uppercase mb-2">Email</label><input name="email" type="email" className="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="tu@email.com" required /></div>
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Nombre Completo</label>
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0071BC] outline-none transition-all" placeholder="Tu nombre" />
                 </div>
-                <div className="mb-6"><label className="block font-bold text-sm uppercase mb-2">Mensaje</label><textarea name="message" rows={4} className="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Cuéntanos tu idea..." required></textarea></div>
                 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0071BC] outline-none transition-all" placeholder="+34 600..." />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Email</label>
+                    <input type="email" id="email" name="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0071BC] outline-none transition-all" placeholder="tu@email.com" />
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">¿En qué podemos ayudarte?</label>
+                  <textarea id="message" name="message" rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0071BC] outline-none transition-all resize-none" placeholder="Cuéntanos tu idea de viaje..."></textarea>
+                </div>
+
                 <div className="flex flex-col space-y-3">
-                  <button type="submit" className="w-full bg-[#0071BC] text-white font-bold py-4 rounded-lg shadow-lg hover:bg-blue-800 transition-all">SOLICITAR INFORMACIÓN (EMAIL)</button>
-                  <div className="relative flex py-2 items-center"><div className="flex-grow border-t border-gray-300"></div><span className="flex-shrink-0 mx-4 text-gray-400 text-xs uppercase">O contáctanos al instante</span><div className="flex-grow border-t border-gray-300"></div></div>
-                  <button type="button" onClick={handleWhatsAppContact} className="w-full bg-[#25D366] text-white font-bold py-4 rounded-lg shadow-lg hover:bg-[#128C7E] transition-all flex items-center justify-center">
+                  <button type="submit" className="w-full bg-[#0071BC] hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 uppercase tracking-wider text-sm flex items-center justify-center">
+                    Solicitar Información por Email
+                  </button>
+                  
+                  <div className="relative flex py-2 items-center">
+                      <div className="flex-grow border-t border-gray-300"></div>
+                      <span className="flex-shrink-0 mx-4 text-gray-400 text-xs uppercase">O contáctanos al instante</span>
+                      <div className="flex-grow border-t border-gray-300"></div>
+                  </div>
+
+                  <button 
+                    type="button"
+                    onClick={handleWhatsAppContact}
+                    className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 uppercase tracking-wider text-sm flex items-center justify-center"
+                  >
                     <svg viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    WHATSAPP DIRECTO
+                    Enviar WhatsApp Directo
                   </button>
                 </div>
               </form>
@@ -708,22 +799,72 @@ function App() {
 
       {/* AI Modal */}
       {isAIModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-           <div className="bg-white w-full max-w-4xl h-[90vh] rounded-3xl shadow-2xl flex flex-col relative overflow-hidden">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+           <div className="bg-white w-full max-w-4xl h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden relative animate-in zoom-in-95 duration-200">
               <div className="bg-[#333] p-4 flex justify-between items-center text-white">
-                <h3 className="font-bold flex items-center gap-2"><Sparkles className="text-[#0071BC]"/> ASISTENTE NEW TRAVEL CLICK</h3>
-                <button onClick={() => setIsAIModalOpen(false)} className="hover:text-red-500"><X size={24}/></button>
+                <div className="flex items-center gap-2">
+                   <Sparkles className="text-[#0071BC]" />
+                   <span className="font-bold font-display tracking-wider">ASISTENTE NEW TRAVEL CLICK</span>
+                </div>
+                <button onClick={() => setIsAIModalOpen(false)} className="hover:text-red-400 transition-colors">
+                  <X size={24} />
+                </button>
               </div>
-              <div className="p-6 flex-1 overflow-y-auto bg-gray-50">
-                 {aiStatus === 'IDLE' && <div className="text-center mt-20"><Globe className="mx-auto text-[#0071BC] mb-4 opacity-50" size={80}/><h3 className="text-2xl font-bold text-gray-800">¿Cuál es tu próximo destino?</h3><p className="text-gray-500 mt-2">Pregúntame por itinerarios, comida o consejos.</p></div>}
-                 {aiStatus === 'LOADING' && <div className="flex flex-col items-center justify-center mt-20"><Loader2 className="animate-spin text-[#0071BC] mb-4" size={48}/><p className="text-gray-500 font-medium">Consultando el mapa...</p></div>}
-                 {aiResponse && <div className="prose prose-lg max-w-none"><ReactMarkdown>{aiResponse.text}</ReactMarkdown></div>}
-              </div>
-              <div className="p-4 border-t bg-white">
-                 <form onSubmit={handleAskAI} className="flex gap-2">
-                    <input value={aiQuery} onChange={e=>setAiQuery(e.target.value)} className="flex-1 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#0071BC] outline-none" placeholder="Ej: Plan de 3 días en París..." />
-                    <button type="submit" className="bg-[#0071BC] text-white p-4 rounded-xl hover:bg-blue-800 transition-colors"><Send size={24}/></button>
-                 </form>
+              
+              <div className="flex-1 flex flex-col bg-gray-50 overflow-hidden relative">
+                 <div className="absolute inset-0 z-0">
+                    <img 
+                       src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop" 
+                       alt="Space view" 
+                       className="w-full h-full object-cover opacity-10" 
+                    />
+                 </div>
+
+                 <div className="flex-1 overflow-y-auto p-6 z-10 relative custom-scrollbar">
+                    {aiStatus === 'IDLE' && (
+                      <div className="h-full flex flex-col items-center justify-center text-center p-4">
+                         <div className="w-16 h-16 bg-[#0071BC]/10 rounded-full flex items-center justify-center mb-6 text-[#0071BC]">
+                            <Globe size={32} />
+                         </div>
+                         <h3 className="text-2xl font-bold text-gray-800 mb-2">¿Qué quieres descubrir hoy?</h3>
+                         <p className="text-gray-500 mb-8 max-w-sm">
+                           Pregúntame sobre itinerarios, comida local o mejores épocas para viajar.
+                         </p>
+                      </div>
+                    )}
+
+                    {aiStatus === 'LOADING' && (
+                       <div className="h-full flex flex-col items-center justify-center">
+                          <Loader2 size={40} className="animate-spin text-[#0071BC] mb-4" />
+                          <p className="text-gray-500 font-medium animate-pulse">Consultando el mapa mundial...</p>
+                       </div>
+                    )}
+
+                    {aiStatus === 'SUCCESS' && aiResponse && (
+                       <div className="prose prose-blue max-w-none">
+                          <ReactMarkdown>{aiResponse.text}</ReactMarkdown>
+                       </div>
+                    )}
+                 </div>
+
+                 <div className="p-4 bg-white border-t border-gray-100 z-20">
+                    <form onSubmit={handleAskAI} className="relative">
+                       <input 
+                         type="text" 
+                         value={aiQuery}
+                         onChange={(e) => setAiQuery(e.target.value)}
+                         placeholder="Escribe tu destino o duda aquí..."
+                         className="w-full pl-5 pr-14 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0071BC] outline-none transition-all shadow-sm"
+                       />
+                       <button 
+                         type="submit" 
+                         disabled={aiStatus === 'LOADING' || !aiQuery.trim()}
+                         className="absolute right-2 top-2 p-2 bg-[#0071BC] text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                       >
+                          <Send size={20} />
+                       </button>
+                    </form>
+                 </div>
               </div>
            </div>
         </div>
