@@ -6,12 +6,13 @@ import {
 import { askTravelAssistant } from './geminiService';
 import ReactMarkdown from 'react-markdown';
 
-// --- TUS ARTÍCULOS ORIGINALES COMPLETOS (Sin recortar) ---
+// --- TUS TEXTOS ORIGINALES COMPLETOS (Sin recortar) ---
 const BLOG_CONTENT: Record<string, string> = {
   '1': `
     <h1>1. RUTA POR LA COSTA BRAVA: CALAS SECRETAS Y PUEBLOS DE PESCADORES</h1>
     <img src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?auto=format&fit=crop&w=1200&q=80" alt="Vista panorámica de la Costa Brava con mar turquesa y pinos" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
     <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">La Costa Brava no es solo un destino, es un estado de ánimo. Pinos que tocan el mar, aguas turquesas y una gastronomía que enamora. Aquí tienes tu hoja de ruta para 5 días inolvidables.</p>
+
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
     <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
       <li style="margin-bottom: 15px;"><strong>Día 1: Blanes y Lloret.</strong> Aterrizaje suave. Empieza en el Jardín Botánico Marimurtra de Blanes para unas fotos de infarto. Termina el día en Cala Boadella, un oasis entre el turismo.</li>
@@ -20,118 +21,238 @@ const BLOG_CONTENT: Record<string, string> = {
       <li style="margin-bottom: 15px;"><strong>Día 4: Begur.</strong> El día de las joyas: Aiguablava, Sa Tuna y Platja Fonda. Aguas cristalinas garantizadas.</li>
       <li style="margin-bottom: 15px;"><strong>Día 5: Cadaqués.</strong> El pueblo de Dalí. Blanco, bohemio y rodeado por la naturaleza salvaje del Cap de Creus.</li>
     </ul>
+
     <h2 style="color: #0d6efd; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
     <ol style="line-height: 1.8; margin-bottom: 30px;">
-      <li style="margin-bottom: 10px;"><strong>Caminar por los Caminos de Ronda:</strong> Son senderos que bordean el mar y conectan las playas.</li>
-      <li style="margin-bottom: 10px;"><strong>Visitar la Casa-Museo Salvador Dalí:</strong> En Portlligat (Cadaqués). Necesitas reservar con antelación.</li>
-      <li style="margin-bottom: 10px;"><strong>Snorkel en las Islas Medas:</strong> Reserva marina llena de vida en L'Estartit.</li>
+      <li style="margin-bottom: 10px;"><strong>Caminar por los Caminos de Ronda:</strong> Son senderos que bordean el mar y conectan las playas. El tramo de Calella de Palafrugell a Llafranc es sencillo y precioso.</li>
+      <li style="margin-bottom: 10px;"><strong>Visitar la Casa-Museo Salvador Dalí:</strong> En Portlligat (Cadaqués). Necesitas reservar con antelación, pero ver su estudio tal cual lo dejó es mágico.</li>
+      <li style="margin-bottom: 10px;"><strong>Snorkel en las Islas Medas:</strong> Desde L'Estartit salen barcos con fondo de cristal o para hacer inmersiones. Es una reserva marina llena de vida.</li>
     </ol>
+
+    <img src="https://images.unsplash.com/photo-1596541675765-a0f1d07ec656?auto=format&fit=crop&w=1200&q=80" alt="Pueblo blanco de Cadaqués con barcas en la orilla" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+
+    <h2 style="color: #0d6efd; margin-top: 40px;">🍽️ Dónde comer</h2>
+    <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
+      <li style="margin-bottom: 10px;"><strong>La Blava (Calella de Palafrugell):</strong> Para comer un arroz o pescado fresco casi con los pies en la arena.</li>
+      <li style="margin-bottom: 10px;"><strong>Compartir (Cadaqués):</strong> De los creadores del famoso "El Bulli". Alta cocina en formato informal para compartir. Imprescindible reservar.</li>
+      <li style="margin-bottom: 10px;"><strong>Can Rafa (Cadaqués):</strong> Mariscos frescos del día capturados por la familia propietaria.</li>
+    </ul>
+
+    <h2 style="color: #0d6efd; margin-top: 40px;">🚫 Lo que no te puedes perder</h2>
+    <p>Ver amanecer desde el Faro del Cap de Creus. Es el punto más oriental de la península ibérica; serás la primera persona en ver salir el sol en España ese día.</p>
+
     <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
       <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
-      <p style="margin-top: 10px; color: #333;">En verano, los parkings de las calas famosas se llenan a las 09:00 AM. Madruga.</p>
+      <p style="margin-top: 10px; color: #333;">En verano, los parkings de las calas famosas se llenan a las 09:00 AM. Si quieres aparcar y tener sitio para la toalla, madruga. Si vas fuera de temporada (junio o septiembre), tendrás el paraíso para ti solo.</p>
+    </div>
+
+    <div style="text-align: center; margin: 50px 0 30px 0;">
+      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
+        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+      </a>
     </div>
   `,
   '2': `
-    <h1>Escapada Imperial: Praga y Budapest</h1>
-    <img src="https://images.unsplash.com/photo-1541849546-2165492d06d6?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">Dos capitales, un pasado imperial y una belleza que corta la respiración. Este itinerario conecta el romanticismo gótico de Praga con la majestuosidad de Budapest.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li style="margin-bottom: 15px;"><strong>Día 1: Praga, la Ciudad Vieja.</strong> Reloj Astronómico y Puente de Carlos.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 2: El Castillo y Malá Strana.</strong> Sube al Castillo de Praga.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 3: Rumbo a Budapest.</strong> Tren panorámico y crucero nocturno por el Danubio.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 4: Buda, la histórica.</strong> Bastión de los Pescadores.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 5: Pest y Relax.</strong> Parlamento y Baños Széchenyi.</li>
-    </ul>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🍽️ Dónde comer</h2>
-    <p>New York Café en Budapest y puestos callejeros de Trdelník en Praga.</p>
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+      <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Escapada Imperial: Praga y Budapest, Dos Joyas del Danubio</h1>
+      <img src="https://images.unsplash.com/photo-1541849546-2165492d06d6?auto=format&fit=crop&w=1200&q=80" alt="Fotografía panorámica al atardecer del Parlamento de Budapest iluminado reflejándose en el río Danubio, estilo travel photography alta calidad" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+      <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+        Dos capitales, un pasado imperial y una belleza que corta la respiración. Este itinerario conecta el romanticismo gótico de Praga con la majestuosidad de Budapest. Un viaje de cuento de hadas en el corazón de Europa.
+      </p>
+      <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 15px;"><strong>Día 1: Praga, la Ciudad Vieja.</strong> Aterrizaje y paseo por la Plaza de la Ciudad Vieja para ver el Reloj Astronómico. Cruza el Puente de Carlos al atardecer.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 2: El Castillo y Malá Strana.</strong> Sube al Castillo de Praga (el más grande del mundo) y baja callejeando por el barrio bohemio de Malá Strana.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 3: Rumbo a Budapest.</strong> Tren panorámico por la mañana. Llegada a Budapest y primera toma de contacto: crucero nocturno por el Danubio (imprescindible).</li>
+        <li style="margin-bottom: 15px;"><strong>Día 4: Buda, la histórica.</strong> Sube al Bastión de los Pescadores y la Iglesia de Matías. Las vistas del Parlamento desde aquí son la postal del viaje.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 5: Pest y Relax Termal.</strong> Visita el Parlamento por dentro y termina el viaje relajándote en los Baños Széchenyi o Gellért.</li>
+      </ul>
+      <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
+      <img src="https://images.unsplash.com/photo-1565426873118-a17ed65d7429?auto=format&fit=crop&w=1200&q=80" alt="Primer plano de una persona sosteniendo un dulce Trdelník en una calle empedrada de Praga con gente desenfocada al fondo" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+      <ol style="padding-left: 20px;">
+        <li style="margin-bottom: 10px;"><strong>Madrugar en el Puente de Carlos:</strong> Si vas a las 7:00 AM, tendrás el puente solo para ti y las estatuas. Magia pura.</li>
+        <li style="margin-bottom: 10px;"><strong>Baños Termales en Budapest:</strong> Es parte de su cultura. Juega al ajedrez dentro del agua caliente en Széchenyi.</li>
+        <li style="margin-bottom: 10px;"><strong>Ruin Bars:</strong> En Budapest, toma algo en el Szimpla Kert, un bar construido en un edificio en ruinas decorado de forma ecléctica.</li>
+      </ol>
+      <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 30px 0; border-radius: 5px;">
+        <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
+        <p style="margin: 10px 0 0 0;">Ojo con la moneda. Ninguna de las dos ciudades usa Euro (usan Coronas Checas y Florines Húngaros). Evita cambiar dinero en el aeropuerto; saca directamente de cajeros oficiales en la ciudad para mejor cambio.</p>
+      </div>
+      <div style="text-align: center; margin: 50px 0 30px 0;">
+        <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+          ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+        </a>
+      </div>
+    </div>
   `,
   '3': `
-    <h1>Japón Milenario: Un Viaje entre Templos y Neones</h1>
-    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">Japón es el país donde el futuro convive con el pasado. Trenes bala y jardines zen.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li style="margin-bottom: 15px;"><strong>Día 1: Tokio Eléctrico.</strong> Shibuya y Shinjuku.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 2: El Tokio Antiguo.</strong> Asakusa y Akihabara.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 3: Kioto.</strong> Fushimi Inari (Toris rojos).</li>
-      <li style="margin-bottom: 15px;"><strong>Día 4: Bambú y Oro.</strong> Arashiyama y Pabellón Dorado.</li>
-      <li style="margin-bottom: 15px;"><strong>Día 5: Nara y Osaka.</strong> Ciervos y comida callejera.</li>
-    </ul>
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+      <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Japón Milenario: Un Viaje entre Templos y Neones</h1>
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80" alt="Icónica vista de la Pagoda Chureito con el Monte Fuji de fondo y ramas de cerezo en flor, contraste de rojo y azul" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+      <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+        Japón es el país donde el futuro convive con el pasado. En un mismo día puedes viajar en un tren bala a 300 km/h y meditar en un jardín zen de hace cinco siglos. Un choque cultural fascinante que te cambiará para siempre.
+      </p>
+      <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 15px;"><strong>Día 1: Tokio Eléctrico.</strong> Aterrizaje en la capital. Sumérgete en el caos organizado del cruce de Shibuya y las luces de neón infinitas de Shinjuku. Godzilla te espera.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 2: El Tokio Antiguo.</strong> Visita el templo Senso-ji en Asakusa (el más antiguo de Tokio) y pasea por el parque Ueno. Termina el día en Akihabara, la meca del anime y la electrónica.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 3: Kioto y las mil puertas.</strong> Tren bala (Shinkansen) hacia Kioto. Visita Fushimi Inari Taisha, el santuario de los miles de toriis rojos que suben la montaña.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 4: Bambú y Oro.</strong> Madruga para ver el Bosque de Bambú de Arashiyama sin gente. Después, deslúmbrate con el Kinkaku-ji (Pabellón Dorado) reflejado en su estanque.</li>
+        <li style="margin-bottom: 15px;"><strong>Día 5: Nara y Osaka.</strong> Mañana en Nara dando de comer a los ciervos sagrados en libertad. Tarde-noche en Dotonbori (Osaka) para probar la mejor comida callejera bajo los neones.</li>
+      </ul>
+      <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
+      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80" alt="Callejón nocturno en Tokio iluminado por neones y farolillos rojos con gente comiendo en puestos callejeros (Izakaya)" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+      <ol style="padding-left: 20px;">
+        <li style="margin-bottom: 10px;"><strong>Baño en un Onsen:</strong> Supera la timidez y prueba los baños termales tradicionales (desnudos y separados por sexos). Es la relajación absoluta.</li>
+        <li style="margin-bottom: 10px;"><strong>Noche de Karaoke:</strong> Alquila una sala privada en Tokio y canta hasta quedarte afónico. Es una institución nacional.</li>
+        <li style="margin-bottom: 10px;"><strong>Dormir en un Ryokan:</strong> Pasa al menos una noche en un alojamiento tradicional con suelo de tatami y futón.</li>
+      </ol>
+      <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 30px 0; border-radius: 5px;">
+        <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
+        <p style="margin: 10px 0 0 0;">En Japón no se deja propina (se considera ofensivo) y no se habla por teléfono en los trenes. La etiqueta y el respeto al prójimo son sagrados. ¡Lleva calcetines limpios y sin agujeros, te descalzarás mucho!</p>
+      </div>
+      <div style="text-align: center; margin: 50px 0 30px 0;">
+        <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+          ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+        </a>
+      </div>
+    </div>
   `,
   '4': `
-    <h1>ANDALUCÍA EN RUTA: SOL, ARTE Y DUENDE</h1>
-    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
-    <p class="intro">Un viaje que despierta los sentidos. Desde la Alhambra hasta Sevilla.</p>
+    <h1>2. ANDALUCÍA EN RUTA: SOL, ARTE Y DUENDE</h1>
+    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=80" alt="La Alhambra de Granada al atardecer con Sierra Nevada al fondo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
+    <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">Un viaje que despierta los sentidos. Desde la grandiosidad de la Alhambra hasta el olor a azahar de Sevilla. Esta ruta del "Triángulo de Oro" es un clásico que nunca falla.</p>
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
     <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1-2:</strong> Sevilla (Giralda, Alcázar, Plaza España).</li>
-      <li><strong>Día 3:</strong> Córdoba (Mezquita y Patios).</li>
-      <li><strong>Día 4:</strong> Granada (Alhambra y Albaicín).</li>
-      <li><strong>Día 5:</strong> Málaga (Mar y Espetos).</li>
+      <li style="margin-bottom: 15px;"><strong>Día 1: Sevilla Clásica.</strong> Catedral, Giralda y Real Alcázar. Noche de tapas por el barrio de Santa Cruz.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 2: Sevilla Moderna.</strong> Plaza de España (de cine) y atardecer en las "Setas" de la Encarnación.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 3: Córdoba.</strong> Tren o coche temprano. Visita a la Mezquita-Catedral y los Patios de Córdoba llenos de flores.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 4: Granada.</strong> La Alhambra (reserva con meses de antelación). Paseo por el Paseo de los Tristes a los pies de la fortaleza.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 5: Málaga.</strong> Un final relajado frente al mar, visitando el teatro romano y el puerto.</li>
     </ul>
+    <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
+      <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
+      <p style="margin-top: 10px; color: #333;">Andalucía en julio y agosto puede superar los 40°C. Organiza tus visitas a monumentos a primera hora de la mañana (09:00h).</p>
+    </div>
+    <div style="text-align: center; margin: 50px 0 30px 0;">
+      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
+        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+      </a>
+    </div>
   `,
   '5': `
-    <h1>Fiordos Noruegos: Donde la Naturaleza Reina</h1>
-    <img src="https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro">Cascadas que caen al mar, trenes que desafían la gravedad y un silencio que cura.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1:</strong> Bergen y muelle Bryggen.</li>
-      <li><strong>Día 2:</strong> Tren de Flåm (espectacular).</li>
-      <li><strong>Día 3:</strong> Crucero por el Naeroyfjord.</li>
-      <li><strong>Día 4:</strong> Mirador Stegastein.</li>
-      <li><strong>Día 5:</strong> Stavanger o regreso.</li>
-    </ul>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+  <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Fiordos Noruegos: Donde la Naturaleza Reina</h1>
+  <img src="https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=1200&q=80" alt="Paisaje épico de un fiordo noruego con aguas azules profundas" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+    Cascadas que caen al mar, trenes que desafían la gravedad y un silencio que cura. Noruega ofrece uno de los paisajes más espectaculares del planeta. Prepárate para respirar el aire más puro de tu vida.
+  </p>
+  <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 15px;"><strong>Día 1: Bergen.</strong> La puerta de los fiordos. Pasea por el muelle hanseático de Bryggen (casas de madera de colores) y sube en funicular al monte Fløyen.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 2: El Tren de Flåm.</strong> Uno de los trayectos en tren más bonitos del mundo. De Myrdal a Flåm, pasando por cascadas y valles profundos.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 3: Naeroyfjord.</strong> Navega por el fiordo más estrecho y espectacular, Patrimonio de la Humanidad. Las paredes de roca parecen tocar el barco.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 4: Mirador Stegastein.</strong> Una plataforma de madera y cristal suspendida a 650 metros sobre el fiordo de Aurland. Vértigo y belleza.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 5: Stavanger o Regreso.</strong> Si tienes tiempo, baja a Stavanger para subir al famoso "Púlpito" (Preikestolen), o disfruta de la tranquilidad escandinava antes de volver.</li>
+  </ul>
+  <div style="text-align: center; margin: 50px 0 30px 0;">
+    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+    </a>
+  </div>
+</div>
   `,
   '6': `
-    <h1>Safari Kenia y Tanzania: En Busca de los Cinco Grandes</h1>
-    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro">No es un zoológico, es la vida real. Sabana infinita y atardeceres de película.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1:</strong> Nairobi (Jirafas y Elefantes).</li>
-      <li><strong>Día 2:</strong> Masai Mara (Safari 4x4).</li>
-      <li><strong>Día 3:</strong> Serengeti (Tanzania).</li>
-      <li><strong>Día 4:</strong> Ngorongoro (El jardín del Edén).</li>
-    </ul>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+  <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Safari Kenia y Tanzania: En Busca de los Cinco Grandes</h1>
+  <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80" alt="Paisaje de la sabana africana al atardecer" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+    No es un zoológico, es la vida real en su estado más puro. Recorrer la sabana infinita, ver amanecer bajo el Kilimanjaro y sentir la tierra vibrar con la Gran Migración es una experiencia que te cambia el alma. Bienvenidos al corazón de África.
+  </p>
+  <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 15px;"><strong>Día 1: Nairobi y las Jirafas.</strong> Aterrizaje en Kenia. Visita el orfanato de elefantes David Sheldrick y alimenta a las jirafas en el Giraffe Centre.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 2: Masai Mara (Kenia).</strong> Viaje a la reserva más famosa. Primer "Game Drive" (safari en 4x4) para buscar leones, guepardos y leopardos.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 3: Rumbo a el Serengeti (Tanzania).</strong> Cruzamos la frontera. El paisaje cambia a llanuras interminables.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 4: Amanecer en la Sabana.</strong> Día completo de rastreo. Busca a los "Cinco Grandes" (León, Leopardo, Elefante, Rinoceronte y Búfalo).</li>
+    <li style="margin-bottom: 15px;"><strong>Día 5: Cráter del Ngorongoro.</strong> El "Jardín del Edén". Un volcán colapsado que alberga un ecosistema único con miles de animales atrapados en sus paredes verdes.</li>
+  </ul>
+  <div style="text-align: center; margin: 50px 0 30px 0;">
+    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+    </a>
+  </div>
+</div>
   `,
   '7': `
-    <h1>NORTE DE ESPAÑA: GASTRONOMÍA Y PAISAJE VERDE</h1>
-    <img src="https://images.unsplash.com/photo-1598453414998-333e6669865a?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
-    <p class="intro">Euskadi y Cantabria: comer bien y paisajes increíbles.</p>
+    <h1>3. NORTE DE ESPAÑA: GASTRONOMÍA Y PAISAJE VERDE</h1>
+    <img src="https://images.unsplash.com/photo-1598453414998-333e6669865a?auto=format&fit=crop&w=1200&q=80" alt="Playa de la Concha en San Sebastián" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
+    <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">Si te gusta comer bien y los paisajes que parecen Suiza pero con mar, esta ruta por Euskadi y Cantabria es para ti. Prepara el apetito.</p>
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
     <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1:</strong> San Sebastián (Pintxos y La Concha).</li>
-      <li><strong>Día 2:</strong> Costa Vasca (Zarautz, Getaria).</li>
-      <li><strong>Día 3:</strong> Bilbao (Guggenheim).</li>
-      <li><strong>Día 4-5:</strong> Cantabria (Santoña, Santander, Santillana).</li>
+      <li style="margin-bottom: 15px;"><strong>Día 1: San Sebastián (Donostia).</strong> Paseo por la playa de La Concha y subida al Monte Igueldo. Cena de Pintxos.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 2: Costa Vasca.</strong> Hondarribia (pueblo pesquero colorido) y Zarautz (cuna de surfistas).</li>
+      <li style="margin-bottom: 15px;"><strong>Día 3: Getaria y Bilbao.</strong> Visita una bodega de Txakoli en Getaria. Tarde de arquitectura con el Guggenheim en Bilbao.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 4: Santoña y Costa Cántabra.</strong> Cruza a Cantabria. Para en Santoña para comprar las mejores anchoas del mundo.</li>
+      <li style="margin-bottom: 15px;"><strong>Día 5: Santander y Santillana del Mar.</strong> La elegancia de la bahía de Santander y el viaje medieval en Santillana.</li>
     </ul>
+    <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 40px 0; border-radius: 8px;">
+      <p style="margin: 0; font-weight: bold; color: #0d6efd; font-size: 1.1em;">💡 Consejo New Travel Click</p>
+      <p style="margin-top: 10px; color: #333;">En el norte el clima cambia en minutos ("Orbayu" o "Sirimiri"). Lleva siempre un chubasquero ligero.</p>
+    </div>
+    <div style="text-align: center; margin: 50px 0 30px 0;">
+      <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease; display: inline-block;">
+        ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+      </a>
+    </div>
   `,
   '8': `
-    <h1>La Toscana: Ruta entre Viñedos y Renacimiento</h1>
-    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro">La Dolce Vita. Florencia, Siena y colinas doradas.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1-2:</strong> Florencia (Duomo, Uffizi, Ponte Vecchio).</li>
-      <li><strong>Día 3:</strong> Ruta del vino en Chianti (coche).</li>
-      <li><strong>Día 4:</strong> Siena y San Gimignano (torres medievales).</li>
-      <li><strong>Día 5:</strong> Val d'Orcia.</li>
-    </ul>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+  <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">La Toscana: Ruta entre Viñedos y Renacimiento</h1>
+  <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80" alt="Paisaje de la Toscana con colinas verdes suaves" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+    La "Dolce Vita" existe y está en la Toscana. Un viaje por carretera a través de colinas doradas, cipreses infinitos, el mejor vino del mundo y ciudades que son museos al aire libre.
+  </p>
+  <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 15px;"><strong>Día 1: Florencia, la cuna del arte.</strong> El Duomo, el Ponte Vecchio y la Galería Uffizi. Florencia se camina y se admira en cada esquina.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 2: El David y el Oltrarno.</strong> Visita la Galería de la Academia para ver al David de Miguel Ángel.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 3: Ruta del Chianti.</strong> Alquila un coche y piérdete por la carretera SR222. Parada obligatoria en Greve in Chianti y visita a una bodega local.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 4: Siena y San Gimignano.</strong> La Piazza del Campo en Siena (quizás la plaza más bonita de Italia) y las torres medievales de San Gimignano por la tarde.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 5: Val d'Orcia.</strong> El paisaje de postal. Pienza, Montalcino y colinas que parecen pintadas a mano.</li>
+  </ul>
+  <div style="text-align: center; margin: 50px 0 30px 0;">
+    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+    </a>
+  </div>
+</div>
   `,
   '9': `
-    <h1>Nueva York: La Ciudad que Nunca Duerme</h1>
-    <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=1200&q=80" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
-    <p class="intro">Rascacielos, Broadway y Central Park.</p>
-    <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-      <li><strong>Día 1:</strong> Midtown (Times Square, Empire State).</li>
-      <li><strong>Día 2:</strong> Estatua de la Libertad y Wall Street.</li>
-      <li><strong>Día 3:</strong> Puente de Brooklyn y DUMBO.</li>
-      <li><strong>Día 4:</strong> Central Park y Museos.</li>
-      <li><strong>Día 5:</strong> High Line y Hudson Yards.</li>
-    </ul>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+  <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Nueva York: Guía de la Ciudad que Nunca Duerme</h1>
+  <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=1200&q=80" alt="Skyline de Manhattan al atardecer" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
+    Es el escenario de mil películas y el centro del mundo moderno. Nueva York es energía pura, rascacielos que tocan las nubes y una mezcla cultural infinita. Prepárate para caminar mucho, mirar hacia arriba y sentirte el protagonista de tu propia serie.
+  </p>
+  <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🗺️ El Itinerario</h2>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 15px;"><strong>Día 1: Midtown y Luces.</strong> Empieza fuerte: Times Square, Bryant Park y la Grand Central Terminal. Sube al atardecer al <em>Top of the Rock</em>.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 2: Libertad y Finanzas.</strong> Ferry a la Estatua de la Libertad por la mañana. Pasea por Wall Street (toca el toro para la buena suerte) y reflexiona en el Memorial del 9/11.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 3: Cruzando el Puente.</strong> Cruza el Puente de Brooklyn a pie (mejor temprano). Explora el barrio de DUMBO para la foto icónica y relájate en Williamsburg, la zona hipster.</li>
+    <li style="margin-bottom: 15px;"><strong>Día 4: El Pulmón Verde.</strong> Alquila una bici en Central Park. Es inmenso. Por la tarde, elige un museo de clase mundial: el MET (arte) o el Museo de Historia Natural (dinosaurios).</li>
+    <li style="margin-bottom: 15px;"><strong>Día 5: High Line y Hudson Yards.</strong> Camina por el High Line (un parque sobre antiguas vías de tren elevadas), come en Chelsea Market y termina viendo la arquitectura futurista de "The Vessel".</li>
+  </ul>
+  <div style="background-color: #f0f7ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 30px 0; border-radius: 5px;">
+    <p style="margin: 0; font-weight: bold; color: #0d6efd;">💡 Consejo New Travel Click</p>
+    <p style="margin: 10px 0 0 0;">Recuerda sacar tu ESTA (visado) con tiempo. Y sobre todo: ¡La propina (Tip) es obligatoria! En restaurantes se espera entre un 18% y un 20%.</p>
+  </div>
+  <div style="text-align: center; margin: 50px 0 30px 0;">
+    <a href="https://www.newtravelclick.com/" target="_blank" style="background-color: #0d6efd; color: #ffffff; padding: 18px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 20px; border-radius: 50px; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3); transition: transform 0.2s ease;">
+      ✈️ RESERVA TU VIAJE EN NEW TRAVEL CLICK
+    </a>
+  </div>
+</div>
   `
 };
 
@@ -153,7 +274,7 @@ const blogData = {
   ]
 };
 
-// --- COMPONENTE LAYOUT (CON LA BARRA DE NAVEGACIÓN FUNCIONAL) ---
+// --- COMPONENTE LAYOUT (Con el botón arreglado) ---
 const Layout = ({ children, onNavigate }: { children: React.ReactNode, onNavigate: (section: string) => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -205,16 +326,14 @@ function App() {
   const [aiResponse, setAiResponse] = useState<{ text: string; sources: any[] } | null>(null);
   const [aiStatus, setAiStatus] = useState('IDLE');
 
-  // --- ARREGLO DE LOS BOTONES DE NAVEGACIÓN ---
   const scrollToSection = (id: string) => {
-    setActivePost(null); // 1. Cierra el artículo si está abierto
-    // 2. Espera un poquito a que se cargue la portada y luego baja
+    setActivePost(null); // Esto cierra el artículo si está abierto
     setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-          setCurrentSection(id);
-        }
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setCurrentSection(id);
+      }
     }, 100);
   };
 
@@ -225,8 +344,33 @@ function App() {
     }
   };
 
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+    const phone = formData.get('phone') as string;
+
+    const body = `Hola, quiero solicitar información.\n\nMis datos son:\n- Nombre: ${name}\n- Teléfono: ${phone}\n- Email: ${email}\n\nMensaje:\n${message}`;
+    // Usamos mailto para abrir el gestor de correo del usuario
+    window.location.href = `mailto:newtravelclick@newtravelclick.com?subject=Nueva Solicitud Web de ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+  };
+
   const handleWhatsAppContact = () => {
-    const text = "Hola, estoy interesado en un viaje.";
+    // Usamos el id del formulario para intentar coger el nombre
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    let name = "Cliente";
+    let message = "Hola, me gustaría más información.";
+    
+    if(form) {
+       const formData = new FormData(form);
+       name = (formData.get('name') as string) || "Cliente";
+       const msgInput = formData.get('message') as string;
+       if(msgInput) message = msgInput;
+    }
+    
+    const text = `Hola soy ${name}, escribo desde la web.\n${message}`;
     window.open(`https://wa.me/34633543009?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -236,12 +380,14 @@ function App() {
     setAiStatus('LOADING');
     try {
       const result = await askTravelAssistant(aiQuery);
-      setAiResponse({ text: result.text || "No response", sources: result.sources || [] });
+      setAiResponse({ text: result.text || "No response generated.", sources: result.sources || [] });
       setAiStatus('SUCCESS');
-    } catch (error) { setAiStatus('ERROR'); }
+    } catch (error) {
+      setAiStatus('ERROR');
+    }
   };
 
-  // --- VISTA DEL ARTÍCULO ---
+  // RENDER: ARTÍCULO
   if (activePost && BLOG_CONTENT[activePost]) {
     return (
       <Layout onNavigate={scrollToSection}>
@@ -259,10 +405,9 @@ function App() {
     );
   }
 
-  // --- VISTA PRINCIPAL (PORTADA) ---
+  // RENDER: PORTADA
   return (
     <Layout onNavigate={scrollToSection}>
-      {/* Hero */}
       <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070" className="w-full h-full object-cover"/>
@@ -278,7 +423,6 @@ function App() {
         </div>
       </section>
 
-      {/* Grid de Rutas */}
       <section id="rutas-espana" className="py-24 bg-[#FFF8F0]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16"><h2 className="text-5xl font-black text-[#333333] mb-4">Nuestras Colecciones</h2></div>
@@ -312,63 +456,4 @@ function App() {
               <h3 className="text-3xl font-black text-[#333333] mb-6 flex items-center justify-between">Larga Distancia <Folder className="text-[#0B3D91] opacity-20 group-hover:opacity-100 transition-opacity"/></h3>
               <div className="space-y-4">
                 {blogData.larga.map((item) => (
-                  <button key={item.id} onClick={() => handleOpenPost(item.id)} className="w-full flex items-center p-4 rounded-lg hover:bg-orange-50 transition-all text-left border-b border-gray-100">
-                     <div className="bg-orange-100 p-2 rounded-full mr-3 text-[#0B3D91]"><MapPin size={20} /></div>
-                     <span className="text-gray-800 font-extrabold text-xl">{item.title}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Formulario con WhatsApp */}
-      <section id="contact" className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <h2 className="text-5xl font-black mb-6">¿Hablamos?</h2>
-              <p className="text-gray-400 text-lg mb-8">Déjanos tus datos y diseñaremos tu viaje ideal.</p>
-            </div>
-            <div className="md:w-1/2 w-full bg-white text-gray-800 p-8 rounded-2xl shadow-2xl">
-              <form id="contact-form" onSubmit={(e) => {e.preventDefault(); alert("Enviado")}} className="space-y-6">
-                <div><label className="block font-bold text-sm uppercase mb-2">Nombre</label><input name="name" className="w-full p-3 bg-gray-50 border rounded-lg" placeholder="Tu nombre" /></div>
-                <div><label className="block font-bold text-sm uppercase mb-2">Mensaje</label><textarea name="message" className="w-full p-3 bg-gray-50 border rounded-lg" placeholder="Tu mensaje"></textarea></div>
-                
-                <button type="submit" className="w-full bg-[#0071BC] text-white font-bold py-4 rounded-lg hover:bg-blue-800 transition-all">ENVIAR EMAIL</button>
-                
-                <div className="relative flex py-2 items-center"><div className="flex-grow border-t border-gray-300"></div><span className="flex-shrink-0 mx-4 text-gray-400 text-xs uppercase">O contáctanos al instante</span><div className="flex-grow border-t border-gray-300"></div></div>
-
-                <button type="button" onClick={handleWhatsAppContact} className="w-full bg-[#25D366] text-white font-bold py-4 rounded-lg flex items-center justify-center hover:bg-[#128C7E] transition-all">
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 mr-2 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    WHATSAPP DIRECTO
-                </button>
-              </form>
-            </div>
-        </div>
-      </section>
-
-      {/* AI Modal */}
-      {isAIModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-           <div className="bg-white w-full max-w-4xl h-[80vh] rounded-3xl shadow-2xl flex flex-col relative">
-              <button onClick={() => setIsAIModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-red-500"><X size={32}/></button>
-              <div className="p-8 flex-1 overflow-y-auto">
-                 {aiStatus === 'IDLE' && <div className="text-center mt-20"><Sparkles className="mx-auto text-[#0071BC] mb-4" size={64}/><h3 className="text-3xl font-bold">Asistente de Viajes IA</h3><p className="text-xl text-gray-500 mt-4">¿A dónde sueñas ir?</p></div>}
-                 {aiStatus === 'LOADING' && <div className="flex justify-center mt-20"><Loader2 className="animate-spin text-[#0071BC]" size={64}/></div>}
-                 {aiResponse && <div className="prose prose-lg"><ReactMarkdown>{aiResponse.text}</ReactMarkdown></div>}
-              </div>
-              <div className="p-6 border-t bg-gray-50 rounded-b-3xl">
-                 <form onSubmit={handleAskAI} className="flex gap-4">
-                    <input value={aiQuery} onChange={e=>setAiQuery(e.target.value)} className="flex-1 p-4 border-2 border-gray-200 rounded-xl text-lg focus:border-[#0071BC] outline-none" placeholder="Ej: Plan de 3 días en París..." />
-                    <button type="submit" className="bg-[#0071BC] text-white p-4 rounded-xl hover:bg-blue-700 transition-colors"><Send size={24}/></button>
-                 </form>
-              </div>
-           </div>
-        </div>
-      )}
-    </Layout>
-  );
-}
-
-export default App;
+                  <button key={item.id} onClick={() => handleOpenPost(item.id)} className="w-full flex items-center p-4 rounded-lg hover:bg-orange-
