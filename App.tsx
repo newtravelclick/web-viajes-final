@@ -31,7 +31,7 @@ import ReactMarkdown from 'react-markdown';
 const BLOG_CONTENT: Record<string, string> = {
   '1': `
     <h1>1. RUTA POR LA COSTA BRAVA: CALAS SECRETAS Y PUEBLOS DE PESCADORES</h1>
-    <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=800&q=80" alt="Vista panorámica de la Costa Brava con mar turquesa y pinos" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?auto=format&fit=crop&w=1200&q=80" alt="Vista panorámica de la Costa Brava con mar turquesa y pinos" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
     <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">La Costa Brava no es solo un destino, es un estado de ánimo. Pinos que tocan el mar, aguas turquesas y una gastronomía que enamora. Aquí tienes tu hoja de ruta para 5 días inolvidables.</p>
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
@@ -50,7 +50,7 @@ const BLOG_CONTENT: Record<string, string> = {
       <li style="margin-bottom: 10px;"><strong>Snorkel en las Islas Medas:</strong> Desde L'Estartit salen barcos con fondo de cristal o para hacer inmersiones. Es una reserva marina llena de vida.</li>
     </ol>
 
-    <img src="https://images.unsplash.com/photo-1563294868-d055498877e3?auto=format&fit=crop&w=800&q=80" alt="Pueblo blanco de Cadaqués con barcas en la orilla" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1596541675765-a0f1d07ec656?auto=format&fit=crop&w=1200&q=80" alt="Pueblo blanco de Cadaqués con barcas en la orilla" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🍽️ Dónde comer</h2>
     <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
@@ -78,7 +78,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
       <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Escapada Imperial: Praga y Budapest, Dos Joyas del Danubio</h1>
 
-      <img src="https://images.unsplash.com/photo-1565426873118-a17ed65d7429?auto=format&fit=crop&w=800&q=80" alt="Fotografía panorámica al atardecer del Parlamento de Budapest iluminado reflejándose en el río Danubio, estilo travel photography alta calidad" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+      <img src="https://images.unsplash.com/photo-1541849546-2165492d06d6?auto=format&fit=crop&w=1200&q=80" alt="Fotografía panorámica al atardecer del Parlamento de Budapest iluminado reflejándose en el río Danubio, estilo travel photography alta calidad" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
       <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
         Dos capitales, un pasado imperial y una belleza que corta la respiración. Este itinerario conecta el romanticismo gótico de Praga con la majestuosidad de Budapest. Un viaje de cuento de hadas en el corazón de Europa.
@@ -95,7 +95,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
       <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
       
-      <img src="https://images.unsplash.com/photo-1518659914757-3f3387870e28?auto=format&fit=crop&w=800&q=80" alt="Primer plano de una persona sosteniendo un dulce Trdelník en una calle empedrada de Praga con gente desenfocada al fondo" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+      <img src="https://images.unsplash.com/photo-1565426873118-a17ed65d7429?auto=format&fit=crop&w=1200&q=80" alt="Primer plano de una persona sosteniendo un dulce Trdelník en una calle empedrada de Praga con gente desenfocada al fondo" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
       <ol style="padding-left: 20px;">
         <li style="margin-bottom: 10px;"><strong>Madrugar en el Puente de Carlos:</strong> Si vas a las 7:00 AM, tendrás el puente solo para ti y las estatuas. Magia pura.</li>
@@ -131,7 +131,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
       <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Japón Milenario: Un Viaje entre Templos y Neones</h1>
 
-      <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80" alt="Icónica vista de la Pagoda Chureito con el Monte Fuji de fondo y ramas de cerezo en flor, contraste de rojo y azul" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80" alt="Icónica vista de la Pagoda Chureito con el Monte Fuji de fondo y ramas de cerezo en flor, contraste de rojo y azul" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
       <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
         Japón es el país donde el futuro convive con el pasado. En un mismo día puedes viajar en un tren bala a 300 km/h y meditar en un jardín zen de hace cinco siglos. Un choque cultural fascinante que te cambiará para siempre.
@@ -148,7 +148,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
       <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
       
-      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="Callejón nocturno en Tokio iluminado por neones y farolillos rojos con gente comiendo en puestos callejeros (Izakaya)" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+      <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80" alt="Callejón nocturno en Tokio iluminado por neones y farolillos rojos con gente comiendo en puestos callejeros (Izakaya)" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
       <ol style="padding-left: 20px;">
         <li style="margin-bottom: 10px;"><strong>Baño en un Onsen:</strong> Supera la timidez y prueba los baños termales tradicionales (desnudos y separados por sexos). Es la relajación absoluta.</li>
@@ -181,7 +181,7 @@ const BLOG_CONTENT: Record<string, string> = {
   `,
   '4': `
     <h1>2. ANDALUCÍA EN RUTA: SOL, ARTE Y DUENDE</h1>
-    <img src="https://images.unsplash.com/photo-1542310182-32a2468305c4?auto=format&fit=crop&w=800&q=80" alt="La Alhambra de Granada al atardecer con Sierra Nevada al fondo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=80" alt="La Alhambra de Granada al atardecer con Sierra Nevada al fondo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
     <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">Un viaje que despierta los sentidos. Desde la grandiosidad de la Alhambra hasta el olor a azahar de Sevilla. Esta ruta del "Triángulo de Oro" es un clásico que nunca falla.</p>
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
@@ -200,7 +200,7 @@ const BLOG_CONTENT: Record<string, string> = {
       <li style="margin-bottom: 10px;"><strong>Museo Picasso en Málaga:</strong> Una colección íntima en la ciudad natal del pintor.</li>
     </ol>
 
-    <img src="https://images.unsplash.com/photo-1559564484-e48d3e0d0d94?auto=format&fit=crop&w=800&q=80" alt="Patio andaluz en Córdoba lleno de flores coloridas" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1549271509-54876b059346?auto=format&fit=crop&w=1200&q=80" alt="Patio andaluz en Córdoba lleno de flores coloridas" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🍽️ Dónde comer</h2>
     <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
@@ -228,7 +228,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Fiordos Noruegos: Donde la Naturaleza Reina</h1>
 
-  <img src="https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=800&q=80" alt="Paisaje épico de un fiordo noruego con aguas azules profundas, montañas verdes verticales y un pequeño ferry navegando, día soleado" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <img src="https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=1200&q=80" alt="Paisaje épico de un fiordo noruego con aguas azules profundas, montañas verdes verticales y un pequeño ferry navegando, día soleado" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
   <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
     Cascadas que caen al mar, trenes que desafían la gravedad y un silencio que cura. Noruega ofrece uno de los paisajes más espectaculares del planeta. Prepárate para respirar el aire más puro de tu vida.
@@ -245,7 +245,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
   
-  <img src="https://images.unsplash.com/photo-1516466723877-e462d73002e9?auto=format&fit=crop&w=800&q=80" alt="Vista desde la ventana del tren de Flam mostrando un valle verde frondoso y una cascada potente" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+  <img src="https://images.unsplash.com/photo-1520633908316-6415e982d61d?auto=format&fit=crop&w=1200&q=80" alt="Vista desde la ventana del tren de Flam mostrando un valle verde frondoso y una cascada potente" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
   <ol style="padding-left: 20px;">
     <li style="margin-bottom: 10px;"><strong>Mercado de Pescado de Bergen:</strong> Aunque es turístico, ver el producto fresco del Mar del Norte es un espectáculo.</li>
@@ -281,7 +281,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Safari Kenia y Tanzania: En Busca de los Cinco Grandes</h1>
 
-  <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Paisaje de la sabana africana al atardecer con siluetas de acacias y un grupo de elefantes caminando en fila" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80" alt="Paisaje de la sabana africana al atardecer con siluetas de acacias y un grupo de elefantes caminando en fila" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
   <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
     No es un zoológico, es la vida real en su estado más puro. Recorrer la sabana infinita, ver amanecer bajo el Kilimanjaro y sentir la tierra vibrar con la Gran Migración es una experiencia que te cambia el alma. Bienvenidos al corazón de África.
@@ -298,7 +298,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
   
-  <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&w=800&q=80" alt="Primer plano de un león macho descansando sobre una roca en el Serengeti mirando majestuosamente a la cámara" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+  <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=1200&q=80" alt="Primer plano de un león macho descansando sobre una roca en el Serengeti mirando majestuosamente a la cámara" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
   <ol style="padding-left: 20px;">
     <li style="margin-bottom: 10px;"><strong>Safari en Globo:</strong> Sobrevuela el Masai Mara al amanecer. Ver la fauna desde el aire en silencio total es una experiencia VIP inolvidable.</li>
@@ -331,7 +331,7 @@ const BLOG_CONTENT: Record<string, string> = {
   `,
   '7': `
     <h1>3. NORTE DE ESPAÑA: GASTRONOMÍA Y PAISAJE VERDE</h1>
-    <img src="https://images.unsplash.com/photo-1598453414998-333e6669865a?auto=format&fit=crop&w=800&q=80" alt="Playa de la Concha en San Sebastián con vistas al monte Igueldo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1598453414998-333e6669865a?auto=format&fit=crop&w=1200&q=80" alt="Playa de la Concha en San Sebastián con vistas al monte Igueldo" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 25px 0;">
     <p class="intro" style="font-size: 1.1em; line-height: 1.6; color: #555; margin-bottom: 30px;">Si te gusta comer bien y los paisajes que parecen Suiza pero con mar, esta ruta por Euskadi y Cantabria es para ti. Prepara el apetito.</p>
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🗺️ El Itinerario</h2>
@@ -350,7 +350,7 @@ const BLOG_CONTENT: Record<string, string> = {
       <li style="margin-bottom: 10px;"><strong>Cueva de El Soplao (Cantabria):</strong> Una cavidad única en el mundo por sus formaciones geológicas excéntricas.</li>
     </ol>
 
-    <img src="https://images.unsplash.com/photo-1572458641029-4d693f41e57c?auto=format&fit=crop&w=800&q=80" alt="Museo Guggenheim Bilbao arquitectura moderna titanio" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+    <img src="https://images.unsplash.com/photo-1560410757-5e6082470719?auto=format&fit=crop&w=1200&q=80" alt="Museo Guggenheim Bilbao arquitectura moderna titanio" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
     <h2 style="color: #0d6efd; margin-top: 40px;">🍽️ Dónde comer</h2>
     <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
@@ -378,7 +378,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">La Toscana: Ruta entre Viñedos y Renacimiento</h1>
 
-  <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80" alt="Paisaje de la Toscana con colinas verdes suaves, caminos de cipreses y una villa de piedra antigua al fondo bajo una luz dorada" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80" alt="Paisaje de la Toscana con colinas verdes suaves, caminos de cipreses y una villa de piedra antigua al fondo bajo una luz dorada" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
   <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
     La "Dolce Vita" existe y está en la Toscana. Un viaje por carretera a través de colinas doradas, cipreses infinitos, el mejor vino del mundo y ciudades que son museos al aire libre.
@@ -395,7 +395,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
   
-  <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=800&q=80" alt="Dos copas de vino tinto Chianti sobre una mesa de madera con vistas a un viñedo al atardecer" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+  <img src="https://images.unsplash.com/photo-1596700877903-88849646c10e?auto=format&fit=crop&w=1200&q=80" alt="Dos copas de vino tinto Chianti sobre una mesa de madera con vistas a un viñedo al atardecer" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
   <ol style="padding-left: 20px;">
     <li style="margin-bottom: 10px;"><strong>Cata de Vinos:</strong> No puedes irte sin probar un Chianti Classico o un Brunello di Montalcino en su lugar de origen.</li>
@@ -431,7 +431,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h1 style="color: #0d6efd; font-size: 2.5rem; margin-bottom: 20px;">Nueva York: Guía de la Ciudad que Nunca Duerme</h1>
 
-  <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="Skyline de Manhattan al atardecer visto desde Brooklyn, con los rascacielos iluminándose y el cielo en tonos naranjas y púrpuras" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
+  <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=1200&q=80" alt="Skyline de Manhattan al atardecer visto desde Brooklyn, con los rascacielos iluminándose y el cielo en tonos naranjas y púrpuras" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 25px;">
 
   <p class="intro" style="font-size: 1.1rem; margin-bottom: 30px;">
     Es el escenario de mil películas y el centro del mundo moderno. Nueva York es energía pura, rascacielos que tocan las nubes y una mezcla cultural infinita. Prepárate para caminar mucho, mirar hacia arriba y sentirte el protagonista de tu propia serie.
@@ -448,7 +448,7 @@ const BLOG_CONTENT: Record<string, string> = {
 
   <h2 style="color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-top: 40px;">🎒 Qué hacer (Imprescindibles)</h2>
   
-  <img src="https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?auto=format&fit=crop&w=800&q=80" alt="Vista icónica del Puente de Brooklyn desde el barrio de DUMBO con edificios de ladrillo rojo a los lados" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
+  <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80" alt="Vista icónica del Puente de Brooklyn desde el barrio de DUMBO con edificios de ladrillo rojo a los lados" style="width: 100%; height: auto; border-radius: 12px; margin: 25px 0;">
 
   <ol style="padding-left: 20px;">
     <li style="margin-bottom: 10px;"><strong>Un Musical en Broadway:</strong> Aunque no sepas inglés perfecto, ver "El Rey León" o "Aladdin" en Nueva York es una experiencia visual de otro nivel.</li>
@@ -639,11 +639,11 @@ function App() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=2070&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop" 
             alt="Sunny Tropical Beach Vacation in Maldives" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent"></div>
         </div>
 
         {/* Content */}
@@ -651,7 +651,7 @@ function App() {
           <h1 className="text-6xl md:text-8xl font-impact text-[#15803d] mb-6 tracking-wide leading-none shadow-sm drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
             DESCUBRE EL MUNDO CON <br/> NEW TRAVEL CLICK
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto font-display font-medium drop-shadow-md">
+          <p className="text-xl md:text-2xl text-gray-700 font-bold mb-10 max-w-3xl mx-auto font-display drop-shadow-sm">
             Viajes diseñados para ti con la seguridad y experiencia que mereces. Déjate inspirar y nosotros nos ocupamos del resto.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -665,7 +665,7 @@ function App() {
              </a>
              <button
                onClick={() => setIsAIModalOpen(true)}
-               className="bg-white/20 backdrop-blur-md border border-white/50 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-white/30 transition-all transform hover:-translate-y-1 font-display uppercase tracking-wider flex items-center justify-center"
+               className="bg-white/40 backdrop-blur-md border border-white/60 text-brand-dark font-bold py-4 px-10 rounded-full shadow-lg hover:bg-white/60 transition-all transform hover:-translate-y-1 font-display uppercase tracking-wider flex items-center justify-center"
              >
                <Sparkles className="mr-2" /> Planificar con IA
              </button>
